@@ -7,7 +7,3 @@ langchain-groq
 faiss-cpu
 unstructured
 sentence-transformers
-tiktoken
-libmagic
-python-magic
-python-magic-bin
