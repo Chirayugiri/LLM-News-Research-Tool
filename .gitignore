@@ -1,0 +1,15 @@
+# Ignore Python cache and compiled files
+__pycache__/
+vector_db/
+*.pyc
+*.pyo
+*.pkl
+*.h5
+*.ckpt
+*.pt
+*.tflite
+*.bin
+*.npy
+*.pkl
+*.zip
+*.tar.gz
