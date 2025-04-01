@@ -37,9 +37,12 @@ streamlit run app.py
 3. Ask relevant questions about the articles.
 4. Get instant, source-backed answers from the bot.
 
+## Output
+
+
 ## Website URL
 https://llm-news-research-tool.onrender.com/
 
 ## Contact
-For any queries or suggestions, please reach out at [your-email@example.com](mailto:your-email@example.com).
+For any queries or suggestions, please reach out at [chirayugiri149@example.com](mailto:chirayugiri149@example.com).
 
