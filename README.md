@@ -38,6 +38,8 @@ streamlit run app.py
 4. Get instant, source-backed answers from the bot.
 
 ## Output
+![LLM News tool output](https://github.com/user-attachments/assets/59b308f9-d882-40d3-b191-159daae2a777)
+![LLM News output 2](https://github.com/user-attachments/assets/1d2ba405-e0d2-4e2f-87a2-7fd5342cf5be)
 
 
 ## Website URL
