@@ -11,6 +11,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 
+# sentence transformer local model path
+model_path = "../Model/all-MiniLM-L6-v2"
 # Load environment variables
 dotenv.load_dotenv()
 
@@ -77,8 +79,14 @@ if process_url_btn:
 
                 # Embedding data
                 main_placeholder.text("Embedding Vector Started Building...✅✅✅")
-                embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-                vectorstore = FAISS.from_documents(docs, embedding_model)
+                embeddings = HuggingFaceEmbeddings(model_name=model_path, model_kwargs={"device": "cpu"})
+
+                if docs:  # Ensure docs are not empty
+                    vectorstore= FAISS.from_documents(docs, embeddings)
+                    with open(file_path, "wb") as f:
+                        pickle.dump(vectorstore, f)
+                else:
+                    st.error("No documents were extracted from the URLs!")
 
                 main_placeholder.empty()
 
@@ -103,7 +111,7 @@ if question:
         
         with st.spinner("🤖 Generating Answer..."):
             chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vectorstore.as_retriever())
-            result = chain({"question": question}, return_only_outputs=True)
+            result = chain.invoke({"question": question})
 
         st.markdown("## ✨ Answer")
         st.info(result["answer"])

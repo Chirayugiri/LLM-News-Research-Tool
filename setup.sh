@@ -3,9 +3,6 @@
 # Update package lists
 apt-get update
 
-# Install system dependencies required by your project
-apt-get install -y libmagic1
-
 # Install Python dependencies
 pip install --no-cache-dir -r requirements.txt
 
