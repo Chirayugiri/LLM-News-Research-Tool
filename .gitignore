@@ -13,3 +13,4 @@ vector_db/
 *.pkl
 *.zip
 *.tar.gz
+.env
