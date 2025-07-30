@@ -20,7 +20,7 @@ st.set_page_config(page_title="News Research Tool", page_icon="📈", layout="wi
 langchain.debug = False  # Disable debug logs
 
 # Model settings
-model_path = "../Model/all-MiniLM-L6-v2"
+model_path = "Model/all-MiniLM-L6-v2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 embeddings = HuggingFaceEmbeddings(model_name=model_path, model_kwargs={"device": device})
 
